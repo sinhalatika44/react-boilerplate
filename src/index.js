@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import theme from '../src/containers/theme';
+import { ThemeProvider } from '@mui/material/styles';
 // import App from './App';
 import Routes from "./routes/routes";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -22,9 +24,9 @@ class ReactApp extends React.Component {
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <ReactApp />
-  </React.StrictMode>
+  </ThemeProvider>
 );
 // ReactDOM.render(<ReactApp />, document.getElementById('root'));
 

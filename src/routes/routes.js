@@ -2,11 +2,13 @@ import React from "react";
 import { Route, Navigate, Routes, Outlet } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
+import Login from "../pages/auth/Login";
 import NotFoundPage from "../containers/common/NotFoundPage";
+import ForgotPassword from "../pages/auth/ForgotPassword";
 
 // import { fakeAuthProvider } from "../auth";
 
-import {isAuthenticated} from "../shared/AuthClass";
+// import {isAuthenticated} from "../shared/AuthClass";
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 //   <Route {...rest} render={(props) => (
@@ -31,7 +33,9 @@ const routes = () =>
             <PrivateRoute><HomePage /></PrivateRoute>
         }
     />
-    <Route path={`/login`} exact Component={HomePage} />
+    <Route path={`/login`} exact Component={Login} />
+    <Route path={`/forgot-password`} exact Component={ForgotPassword} />
+    <Route path={`/home`} exact Component={HomePage} />
     { /* Finally, catch all unmatched routes */}
     <Route path="*" Component={NotFoundPage} />
   </Routes>;
