@@ -2,9 +2,11 @@ import React from "react";
 import { Route, Navigate, Routes, Outlet } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
+import Dashboard from '../pages/dashboard/Dashboard';
 import Login from "../pages/auth/Login";
 import NotFoundPage from "../containers/common/NotFoundPage";
 import ForgotPassword from "../pages/auth/ForgotPassword";
+import About from "../pages/dashboard/About";
 
 // import { fakeAuthProvider } from "../auth";
 
@@ -35,7 +37,9 @@ const routes = () =>
     />
     <Route path={`/login`} exact Component={Login} />
     <Route path={`/forgot-password`} exact Component={ForgotPassword} />
-    <Route path={`/home`} exact Component={HomePage} />
+    <Route path={`/`} exact Component={HomePage} />
+    <Route path={`/dash`} exact Component={Dashboard} />
+    <Route path={`/about`} exact Component={About} />
     { /* Finally, catch all unmatched routes */}
     <Route path="*" Component={NotFoundPage} />
   </Routes>;

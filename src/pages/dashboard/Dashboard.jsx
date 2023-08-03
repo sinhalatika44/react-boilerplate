@@ -1,19 +1,15 @@
+import logo from '../../logo.svg';
+import '../../App.css';
 import * as React from 'react';
-import { Navigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import BasicMenu from '../containers/common/Navigation';
-import AccountMenu from '../containers/common/AccountMenu';
+import BasicMenu from '../../containers/common/Navigation';
+import AccountMenu from '../../containers/common/AccountMenu';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import BasicTabs from '../containers/common/TabMenu';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import WebsiteMenu from './WebsiteMenu';
-import Footer from './Footer';
-import Footer2 from './Footer2';
+import BasicTabs from '../../containers/common/TabMenu';
 
 import Divider from '@mui/material/Divider';
 // or
@@ -23,23 +19,18 @@ import Divider from '@mui/material/Divider';
 // import { Navigate } from 'react-router-dom';
 // import Copyright from '../../containers/common/Copyright';
 
-function HomePage() {
+function Dashboard() {
   return (
-    <>
     <Container maxWidth="lg">
-        <Box sx={{ my: 1 }}>
+        <Box sx={{ my: 1 }} mt={2}>
         <Grid container spacing={2}>
-        <Grid item xs={10}>
-          <Typography component="h5">
-            App Zest
-          </Typography>
+            <Grid item xs={9}>
+        <Typography component="h5">
+            Notes App
+        </Typography>
         </Grid>
-        <Grid item xs={2}>
-          <Tooltip title="Login">
-              <Button variant="outlined">
-                  Login
-              </Button>
-          </Tooltip>
+        <Grid item xs={3}>
+        <AccountMenu/>
         </Grid>
         </Grid>
         </Box>
@@ -47,7 +38,7 @@ function HomePage() {
       <Box sx={{ my: 4 }}>
         {/* <BasicMenu/> */}
         <Container maxWidth="md">
-        <WebsiteMenu/>
+        <BasicTabs/>
           </Container>
             {/* <div className="App">
                 <Typography variant="h4" component="h1" gutterBottom>
@@ -68,9 +59,7 @@ function HomePage() {
             </div> */}
       </Box>
     </Container>
-    <Footer2/>
-    </>
   );
 }
 
-export default HomePage;
+export default Dashboard;
